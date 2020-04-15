@@ -7,12 +7,9 @@ import * as serviceWorker from "./serviceWorker";
 import TodoState from "./contexts/TodoContext/TodoContextState";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <TodoState>
-      <App />
-    </TodoState>
-  </React.StrictMode>,
-
+  <TodoState>
+    <App />
+  </TodoState>,
   document.getElementById("root")
 );
 

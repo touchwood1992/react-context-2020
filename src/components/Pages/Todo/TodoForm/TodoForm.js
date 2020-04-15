@@ -1,6 +1,9 @@
 import React, { useState, useContext } from "react";
 import TodoContext from "../../../../contexts/TodoContext/TodoContext";
 import { v4 as uuidv4 } from "uuid";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const TodoForm = () => {
   const todoContext = useContext(TodoContext);
 
@@ -25,9 +28,13 @@ const TodoForm = () => {
       email: "",
       id: uuidv4(),
     });
+    toast("Added Successfully !", {
+      position: toast.POSITION.BOTTOM_CENTER,
+    });
   };
   return (
     <form className="form-horizontal" onSubmit={addTodo}>
+      <ToastContainer />
       <div className="form-group">
         <label className="control-label col-sm-2" htmlFor="name">
           Name:
